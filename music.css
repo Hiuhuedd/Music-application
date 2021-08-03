@@ -1,0 +1,157 @@
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image: linear-gradient(0deg, rgb(208, 243, 247) 24.8%, rgb(221, 247, 252) 92%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .glass {
+            background: linear-gradient(to right bottom, rgba(176, 201, 233, 0.7), rgba(149, 235, 187, 0.5));
+            position: relative;
+            z-index: 2;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 80vw;
+            border-radius: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .musiccontainer {
+            background-color: rgb(253, 249, 249);
+            border-radius: 15px;
+            box-shadow: 0 20px 20px 0 rgba(89, 230, 131, 0.5);
+            padding: 30px 50px;
+            margin: 100px 10px;
+            z-index: 1;
+            width: 30rem;
+            position: relative;
+        }
+        
+        .imgcontainer ::after {
+            content: "";
+            background-color: rgb(226, 220, 220);
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            left: 50%;
+            bottom: 55%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .imgcontainer {
+            width: 110px;
+            position: relative;
+        }
+        
+        .imgcontainer img {
+            width: inherit;
+            border-radius: 50%;
+            height: 110px;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: rotate 3s linear infinite;
+            animation-play-state: paused;
+        }
+        
+        .musiccontainer.play .imgcontainer img {
+            animation-play-state: running;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            padding-left: 15rem;
+        }
+        
+        .actionbtn {
+            background-color: rgb(255, 255, 255);
+            border: 0;
+            color: rgb(160, 159, 150);
+            font-size: 10px;
+            padding: 15px;
+            cursor: pointer;
+            margin: 0 20px;
+            border-radius: 50%;
+        }
+        
+        .actionbtnbig {
+            color: #716e74;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+        
+        .actionbtn:focus {
+            outline: 0;
+        }
+        
+        .musicinfor {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 15px 15px 0 0;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 27em;
+            padding: 10px 10px 10px 150px;
+            opacity: 0;
+            transform: translateY(0%);
+            transition: transform 0.3s ease-in, opacity 0.3 ease-in;
+        }
+        
+        .musiccontainer.play .musicinfor {
+            opacity: 1;
+            transform: translateY(-100%);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .progresscontainer {
+            background-color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            height: 4px;
+            width: 100%;
+        }
+        
+        .progress {
+            background-color: #fe8daa;
+            border-radius: 5px;
+            height: 100%;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        h1 {
+            color: rgb(255, 255, 255);
+        }
+        
+        .currentTime {
+            color: lightcoral;
+            font-size: 11px;
+        }

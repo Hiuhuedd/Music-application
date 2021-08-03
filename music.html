@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiuhu's music player</title>
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="glass">
+        <h1>hiuhu's music player</h1><br>
+        <div class="musiccontainer">
+            <div class="musicinfor">
+                <h4 id="title"></h4>
+                <div class="progresscontainer">
+                    <div class="progress"></div>
+                </div>
+                <div class="currentTime">h</div>
+
+            </div>
+            <audio src="music/Costumbre.mp3" id="audio"></audio>
+            <div class="imgcontainer">
+                <img id="cover" src="./images/Costumbre.jpg" alt="mtz">
+                <div class="navigation">
+                    <button id="previous" class="actionbtn"><i class="fas fa-backward"></i></button>
+                    <button id="play" class="actionbtn  actionbtnbig"><i class="fas fa-play"></i></button>
+                    <button id="next" class="actionbtn"><i class="fas fa-forward"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+</body>
+
+</html>
